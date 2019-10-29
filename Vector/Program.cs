@@ -13,8 +13,15 @@ namespace Vector
             numbers.PushBack(11);
             numbers.PushBack(19);
             numbers.PopBack();
+            numbers.PopBack();
 
-            Console.WriteLine(numbers);
+            numbers.PopBack();
+            numbers.PopBack();
+            numbers.PopBack();
+            numbers.PopBack();
+            numbers.PopBack();
+
+
 
             foreach (int number in numbers)
             {
