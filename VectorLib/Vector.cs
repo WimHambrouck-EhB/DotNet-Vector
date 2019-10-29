@@ -33,6 +33,12 @@ namespace VectorLib
                 itemCount--;
         }
 
+        // om collection initaliser te laten werken (new Vector { })
+        public void Add(T item)
+        {
+            PushBack(item);
+        }
+
         public T GetItem(int index)
         {
             if (index < itemCount)
