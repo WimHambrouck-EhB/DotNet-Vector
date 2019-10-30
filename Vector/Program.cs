@@ -36,18 +36,23 @@ namespace Vector
         {
             Vector<Email> emails = InitMails();
 
-            var emailsVandaag = emails.Where(mail => mail.Received.Date == DateTime.Now.Date).OrderByDescending(mail => mail.Received);
+            var emailsVandaag = emails
+                .Where(mail => mail.Received.Date == DateTime.Now.Date)
+                .OrderByDescending(mail => mail.Received);
+
             var emailsVandaagQuerySyntax = from mail in emails
                                            where mail.Received.Date == DateTime.Now.Date
                                            orderby mail.Received descending
                                            select mail;
 
-            var emailsDitJaar = emails.Where(mail => mail.Received.Year == DateTime.Now.Year).OrderByDescending(mail => mail.Received);
+            var emailsDitJaar = emails
+                .Where(mail => mail.Received.Year == DateTime.Now.Year)
+                .OrderByDescending(mail => mail.Received);
 
             Console.WriteLine("Geef een zoekterm in: ");
             string zoekterm = Console.ReadLine();
             var emailsMetKeyword = emails.Where(mail => mail.Body.Contains(zoekterm)).OrderByDescending(mail => mail.Received);
-            // Console.WriteLine(string.Join(" ", emailsMetKeyword));
+            Console.WriteLine(string.Join(" ", emailsMetKeyword));
 
             DateTimeFormatInfo formatInfo = DateTimeFormatInfo.CurrentInfo;
             Calendar calendar = formatInfo.Calendar;
