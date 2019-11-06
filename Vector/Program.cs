@@ -29,7 +29,45 @@ namespace Vector
              * 11
              */
 
+            Uitbreiding();
+
             Queries();
+        }
+
+        private static void Uitbreiding()
+        {
+            // initialisatie met andere Enumerable
+            var lijst = new List<int> { 0, 1, 2, 3, 4 };
+            var set = new HashSet<int> { 5, 6, 7, 8, 9 };
+
+            var vectorFromList = new Vector<int>(lijst);
+            var vectorFromHashSet = new Vector<int>(set);
+
+            foreach (int getal in vectorFromList)
+            {
+                Console.Write($"{getal} ");
+            }
+
+            foreach (int getal in vectorFromHashSet)
+            {
+                Console.Write($"{getal} ");
+            }
+
+            /* Uitvoer:
+             * 0 1 2 3 4 5 6 7 8 9
+             */
+
+            // initialisatie met collection initialiser
+            var vector = new Vector<int> { 5, 6, 7, 8 };
+
+            foreach (int getal in vector)
+            {
+                Console.Write($"{getal} ");
+            }
+
+            /* Uitvoer:
+             * 5 6 7 8 
+             */
         }
 
         private static void Queries()
