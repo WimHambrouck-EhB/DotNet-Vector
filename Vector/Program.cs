@@ -128,7 +128,7 @@ namespace Vector
                 },
                 new Email {
                     From = "wim.hambrouck@ehb.be",
-                    To = new List<string> { "test@test.be", "persoon@domain.land" },
+                    To = new List<string> { "test@test.be", "thisisnotavalidemail.com" },
                     Subject = "Onderwerp",
                     Body = RandomString(1000),
                     Received = new DateTime(2019, 10, 28)
