@@ -21,7 +21,7 @@ namespace VectorLib
         }
 
         /// <summary>
-        /// Initialiseert nieuwe Vector met dezelfde inhoud en grootte als gegeven collectie.
+        /// Uitbreiding 1: Initialiseert nieuwe Vector met dezelfde inhoud en grootte als gegeven collectie.
         /// </summary>
         /// <param name="collection">Collectie van het type <see cref="IEnumerable{T}"/> die zal gebruikt worden om de initiele waardes van de Vector op to vullen.</param>
         public Vector(IEnumerable<T> collection)
@@ -55,8 +55,10 @@ namespace VectorLib
         }
 
         /// <summary>
-        /// Voorzien om collection initialiser te laten werken (new Vector { }).
+        /// Uitbreiding 2: om de collection initialiser te doen werken (new Vector { }).
+        /// Zie: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers#collection-initializers
         /// </summary>
+        /// <param name="item">Toe te voegen item.</param>
         public void Add(T item)
         {
             PushBack(item);
