@@ -120,8 +120,6 @@ namespace VectorLib
 
         private IEnumerator<T> VectorEnumerator()
         {
-            // je kan een eigen Enumerator schrijven voor je vector, 
-            // maar je kan ook de compiler het werk voor je laten doen met yield return
             for (int i = 0; i < itemCount; i++)
             {
                 yield return items[i];

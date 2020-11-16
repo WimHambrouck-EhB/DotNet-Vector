@@ -48,13 +48,21 @@ namespace Vector
                 Console.Write($"{getal} ");
             }
 
+            Console.WriteLine();
+
+            /* Uitvoer:
+            * 0 1 2 3 4
+            */
+
             foreach (int getal in vectorFromHashSet)
             {
                 Console.Write($"{getal} ");
             }
 
+            Console.WriteLine();
+
             /* Uitvoer:
-             * 0 1 2 3 4 5 6 7 8 9
+             * 5 6 7 8 9
              */
 
             // initialisatie met collection initialiser
@@ -64,6 +72,8 @@ namespace Vector
             {
                 Console.Write($"{getal} ");
             }
+            
+            Console.WriteLine();
 
             /* Uitvoer:
              * 5 6 7 8 
@@ -89,7 +99,7 @@ namespace Vector
 
             Console.WriteLine("Geef een zoekterm in: ");
             string zoekterm = Console.ReadLine();
-            var emailsMetKeyword = emails.Where(mail => mail.Body.Contains(zoekterm)).OrderByDescending(mail => mail.Received);
+            var emailsMetKeyword = emails.Where(mail => mail.Body.ToLowerInvariant().Contains(zoekterm.ToLowerInvariant())).OrderByDescending(mail => mail.Received);
             Console.WriteLine(string.Join(" ", emailsMetKeyword));
 
             DateTimeFormatInfo formatInfo = DateTimeFormatInfo.CurrentInfo;

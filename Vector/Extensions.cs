@@ -6,9 +6,14 @@ namespace Vector
 {
     static class Extensions
     {
+        /// <summary>
+        /// Controleert of invoer een geldig e-mailadres is.
+        /// code gebaseerd op: https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
+        /// </summary>
+        /// <param name="invoer"></param>
+        /// <returns></returns>
         public static bool IsValidEmail(this string invoer)
         {
-            // bron: https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
             if (string.IsNullOrWhiteSpace(invoer))
                 return false;
 
